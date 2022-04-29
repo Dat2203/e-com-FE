@@ -1,0 +1,78 @@
+.cart_table {
+  width: 80%;
+  &__body__item {
+    @include flex(flex-start, flex-start);
+    padding: 20px 0;
+  }
+  &__header {
+    width: 100%;
+    @include flex(flex-start, flex-start);
+    padding: 10px 0;
+    border-bottom: 1px solid grey;
+  }
+  &__bottom {
+    border-top: solid 1px grey;
+    padding-top: 40px;
+    @include flex(flex-start, space-between);
+    &__summary {
+      width: 400px;
+    }
+    &__detail {
+      @include flex(flex-start, space-between);
+      line-height: 25px;
+    }
+  }
+}
+
+.cart__col__product {
+  @include flex(flex-start, flex-start);
+  text-align: left;
+  margin-right: 20px;
+  img {
+    width: 50px;
+    margin-right: 20px;
+  }
+  &__detail {
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+    span {
+      font-weight: 500;
+    }
+  }
+}
+.cart__col__quantity {
+  &__action {
+    @include flex(center, space-around);
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid grey;
+  }
+  padding: 0 70 px;
+  &__btn {
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+.cart__col__product__price {
+  padding: 0 30px;
+}
+.cart_table__header__title:nth-child(1) {
+  width: 60%;
+}
+.cart_table__header__title:nth-child(2) {
+  width: 15%;
+}
+.cart_table__header__title:nth-child(3) {
+  width: 10%;
+}
+.cart_table__header__title:nth-child(4) {
+  width: 10%;
+}
+.cart_table__header__title:nth-child(5) {
+  width: 10%;
+}
+.continue__shopping__btn {
+  width: 30%;
+  border: solid 1px #000;
+}

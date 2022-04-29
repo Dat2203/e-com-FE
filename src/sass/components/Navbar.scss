@@ -1,0 +1,218 @@
+.navbar {
+  background-color: $main-bg;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 99;
+  padding: 0 50px;
+  transition: height 0.3s ease;
+  @include tablet {
+    height: 70px;
+    box-shadow: $box-shadow;
+  }
+
+  @include mobile {
+    height: 70px;
+  }
+
+  .container {
+    height: 100%;
+  }
+  &__logo {
+    @include flex(center, center);
+    position: absolute;
+    inset: 0;
+    height: $nav-height;
+    pointer-events: none;
+    img {
+      height: 40px;
+    }
+  }
+  &.shrink {
+    height: $nav-shrink;
+    box-shadow: $box-shadow;
+    z-index: 100;
+
+    @include mobile {
+      height: 40px;
+    }
+  }
+  &__menu {
+    @include flex(center, space-between);
+    height: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333f48;
+    font-weight: 700;
+    width: 100%;
+    padding: 0 10px;
+
+    &__item ~ &__item {
+      margin-left: 39px;
+
+      @include tablet {
+        margin-left: 20px;
+      }
+
+      @include mobile {
+        margin-left: 10px;
+      }
+    }
+
+    &__item.active {
+      font-weight: 600;
+      color: $main-color;
+    }
+    &__item:hover {
+      font-weight: 600;
+      color: red;
+    }
+
+    &__mobile-toggle {
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+    &__left {
+      &__close {
+        display: none;
+      }
+    }
+    &__right,
+    &__left {
+      @include flex(center, center);
+      height: 80px;
+    }
+    &__left {
+      @include tablet {
+        flex-direction: column;
+        background-color: $main-bg;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: flex-start;
+        padding-top: 30px;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+
+        &.active {
+          transform: translateX(0);
+        }
+
+        &__item ~ &__item {
+          margin-left: unset;
+          margin-top: 20px;
+        }
+
+        &__close {
+          display: block;
+          position: absolute;
+          left: 20px;
+          font-size: 2.5rem;
+        }
+      }
+      &__close {
+        display: none;
+      }
+    }
+    &__right {
+      font-size: 2.25rem;
+      padding-right: 0 40px;
+      &__item {
+        position: relative;
+      }
+      @include tablet {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+.navbar__menu__item__badge {
+  position: absolute;
+  @include circle(15px);
+  background-color: red;
+  font-size: 10px;
+  color: white;
+  @include flex(center, center);
+  top: 0;
+  right: 0;
+}
+.badge__active {
+  display: none;
+}
+.navbar__cart {
+  position: absolute;
+  width: 380px;
+  background-color: white;
+  right: 50px;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  transform: 100px;
+  padding: 10px;
+  &__product {
+    @include flex(flex-start, flex-start);
+    margin-top: 10px;
+    img {
+      width: 15%;
+      height: 75px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+    &__detail {
+      width: 75%;
+      h4 {
+        color: grey;
+      }
+      span {
+        font-weight: 500;
+        line-height: 30px;
+      }
+    }
+    &__delete {
+      text-decoration: underline;
+      cursor: pointer;
+      color: red;
+    }
+  }
+  &__total__price {
+    margin-top: 20px;
+    text-align: center;
+  }
+  &__to-cart {
+    @include flex(center, center);
+    width: 100%;
+    background-color: rgb(51, 63, 72);
+    color: #fff;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 40px;
+  }
+  &__empty {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    i {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+}
+.policy__carousel {
+  position: relative;
+  top: 80px;
+  background-color: #63b1bc;
+  height: 40px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  padding-top: 10px;
+}

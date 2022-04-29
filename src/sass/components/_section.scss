@@ -1,0 +1,47 @@
+.section {
+  margin: 50px;
+  position: relative;
+
+  & > * ~ * {
+    margin-top: 20px;
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__body {
+    &__img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+.subcribe--connect--form {
+  @include flex(center, space-between);
+}
+.subcribe-form {
+  @include flex(center, space-between);
+  background: whitesmoke;
+  padding: 35px 20px;
+  width: 100%;
+  border-radius: 20px 0 0 0;
+  input {
+    padding: 10px 20px;
+    border: none;
+    width: 50%;
+  }
+}
+.connect-form {
+  @include flex(center, center);
+  background: whitesmoke;
+  padding: 35px 20px;
+  width: 100%;
+  border-radius: 0 0 20px 0;
+  margin-right: -20px;
+  i {
+    font-size: 38px;
+  }
+  i ~ i {
+    margin-left: 15px;
+  }
+}

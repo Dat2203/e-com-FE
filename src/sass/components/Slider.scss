@@ -1,0 +1,52 @@
+.slider {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  &__img {
+    height: 100%;
+    display: flex;
+
+    transition: all 1.5s ease;
+
+    &__container {
+      width: 100vw;
+      flex: 1;
+      transition: all 1.5s ease;
+    }
+    img {
+      width: 100%;
+      object-fit: fill;
+    }
+  }
+  &__btn {
+    width: 50px;
+    height: 50px;
+    background-color: #fff7f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    opacity: 0.5;
+    z-index: 2;
+    &--right {
+      right: 10px;
+    }
+    &--left {
+      left: 10px;
+    }
+    @include tablet {
+      width: 30px;
+      height: 30px;
+    }
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

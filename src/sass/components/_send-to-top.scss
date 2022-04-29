@@ -1,0 +1,6 @@
+.send-to-top {
+  @include flex(center, space-around);
+  flex-direction: column;
+  color: #c8c7cc;
+  border-radius: 5px 0 0 5px;
+}

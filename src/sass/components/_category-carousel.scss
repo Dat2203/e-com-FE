@@ -1,0 +1,38 @@
+.category {
+  @include flex(flex-start, space-between);
+  &__slide {
+    width: 20%;
+  }
+  &__product__carousel {
+    width: 77%;
+    position: relative;
+  }
+}
+.category__circle {
+  margin-left: 50px;
+  img {
+    @include circle(200px);
+    @include tablet {
+      @include circle(100px);
+    }
+  }
+  span {
+    text-align: center;
+    margin-top: 20px;
+    font-style: 16px;
+    font-weight: 600;
+  }
+}
+.carousel__btn {
+  position: absolute;
+  top: 30%;
+  z-index: 5;
+  font-size: 40px;
+
+  &__left {
+    left: 10px;
+  }
+  &__right {
+    right: 10px;
+  }
+}

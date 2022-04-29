@@ -1,0 +1,89 @@
+.catalog {
+  @include flex(flex-start, flex-start);
+  padding: 0 40px;
+  &__filter {
+    width: 20%;
+  }
+  &__content {
+    width: 80%;
+    position: relative;
+
+    &__grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 10px;
+    }
+    &__filter {
+      @include flex(center, flex-end);
+      padding: 20px 0 20px;
+
+      &__btn {
+        border: none;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        align-content: center;
+        span {
+          margin-right: 10px;
+        }
+      }
+      &__btn ~ &__btn {
+        margin-left: 20px;
+      }
+
+      &__form {
+        display: none;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        background: #fff;
+        padding: 30px 30px;
+        -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+        box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+
+        &__option {
+          @include flex(flex-start, flex-start);
+          flex-direction: column;
+          flex: 1;
+          h4 {
+            margin-bottom: 30px;
+          }
+
+          &__selection ~ &__selection {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    &__filter :nth-child(2) {
+      color: red;
+    }
+  }
+}
+.active-form {
+  display: block;
+  display: flex;
+}
+.catalog-banner {
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+.catalog__filter {
+  h3:first-child {
+    margin-top: 70px;
+  }
+}
+.catalog__content__filter__apply-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: $main-color;
+  width: 80px;
+  color: $main-bg;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+}

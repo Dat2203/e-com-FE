@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@400;500&display=swap");
+
+@import "./variable";
+@import "./mixins";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  font-family: Montserrat;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+@each $color, $val in $colors {
+  .color-#{$color} {
+    color: $val;
+  }
+
+  .bg-#{$color} {
+    background-color: $val;
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-#{$val} {
+    grid-template-columns: repeat($val, 1fr);
+  }
+}
+@each $val in $numbers {
+  .grid-col-md-#{$val} {
+    grid-template-columns: repeat($val, 1fr);
+  }
+}
+@each $val in $numbers {
+  .grid-col-sm-#{$val} {
+    @include mobile {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}
+@each $val in $numbers {
+  .col-#{$val} {
+    width: calc((8.33% * $val));
+  }
+}
+@each $val in $numbers1 {
+  .w-#{$val} {
+    width: calc((1% * $val));
+  }
+}
+body {
+  overflow-x: hidden;
+}
+.main {
+  margin-top: 80px;
+  margin-bottom: 2rem;
+
+  // @include tablet {
+  //   margin-top: calc(#{$nav-tablet-height} + 20px);
+  // }
+
+  // @include mobile {
+  //   margin-top: calc(#{$nav-mobile-height} + 10px);
+  // }
+}
+
+.grid {
+  display: grid;
+  overflow: hidden;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sp-btn {
+  justify-content: space-between;
+  display: flex;
+}
+.sd-box {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+  border-radius: 10px;
+}
+.w-35 {
+  width: 35%;
+}
+.triangle {
+  font-size: 0px;
+  line-height: 0%;
+  width: 0px;
+  border-bottom: 20px solid #000;
+  border-left: 10px solid #000;
+  border-right: 10px solid #000;
+}
+.slick-slide {
+  padding: 0 5px;
+}

@@ -1,0 +1,26 @@
+@mixin flex($alignt-item, $justify-content) {
+  display: flex;
+  align-items: $alignt-item;
+  justify-content: $justify-content;
+}
+@mixin square($width) {
+  width: $width;
+  height: $width;
+}
+@mixin circle($width) {
+  width: $width;
+  height: $width;
+  border-radius: 50%;
+}
+
+@mixin mobile {
+  @media only screen and(max-width:$mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and(max-width: $table-width) {
+    @content;
+  }
+}

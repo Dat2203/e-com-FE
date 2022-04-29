@@ -1,0 +1,102 @@
+.product {
+  @include flex(flex-start, flex-start);
+  padding: 50px 200px;
+  &__detail {
+    width: 40%;
+    margin-left: 45px;
+
+    &__name {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    &__prices {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      @include flex(flex-start, flex-start);
+      flex-direction: column;
+      del {
+        color: grey;
+      }
+    }
+    &__item {
+      line-height: 30px;
+      &__list {
+        @include flex(flex-start, flex-start);
+
+        &__item__color {
+          width: 33px;
+          height: 33px;
+          border-radius: 50%;
+          border: solid 2px #000;
+          cursor: pointer;
+          margin-right: 10px;
+        }
+        &__item__size {
+          width: 40px;
+          height: 40px;
+          border: dashed 1px grey;
+          margin-right: 10px;
+          text-align: center;
+        }
+      }
+    }
+    &__policy {
+      margin: 40px 0;
+      border: solid 1px grey;
+      width: 100%;
+      &__list {
+        @include flex(center, flex-start);
+
+        padding: 10px 20px;
+        span {
+          color: grey;
+        }
+        i {
+          font-size: 20px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+.product-views {
+  @include flex(flex-start, flex-start);
+  width: 60%;
+  &__list {
+    width: 15%;
+    margin-left: 25px;
+  }
+  &__item {
+    object-fit: cover;
+    width: 100%;
+    cursor: pointer;
+    &.active {
+      opacity: 0.5;
+    }
+  }
+  &___main {
+    width: 75%;
+    img {
+      object-fit: cover;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+}
+
+.circle {
+  border-radius: 50%;
+}
+.add-product__to--cart {
+  width: 100%;
+  border: solid 1px #333f48;
+  height: 60px;
+  margin-bottom: 10px;
+}
+.btn-add {
+  background-color: #333f48;
+  color: white;
+}

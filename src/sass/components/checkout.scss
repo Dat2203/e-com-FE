@@ -1,0 +1,126 @@
+.checkout {
+  width: 100%;
+  @include flex(flex-start, flex-start);
+  height: 100%;
+  &__abate {
+    width: 45%;
+    padding: 50px 10px 10px 150px;
+    &__title {
+      font-weight: 600;
+      padding: 20px 0;
+    }
+    &__voucher {
+      width: 100%;
+      padding: 20px 0;
+      height: 50px;
+      @include flex(center, center);
+      input {
+        width: 70%;
+        border-radius: 20px 0 0 20px;
+        border: lightgray;
+        background-color: whitesmoke;
+        padding: 10px 20px;
+        height: 40px;
+      }
+      input:focus {
+        outline: none;
+      }
+      &__btn {
+        width: 25%;
+        border-radius: 0 20px 20px 0;
+        background-color: #63b1bc;
+        height: 40px;
+        font-weight: 600;
+        color: white;
+        @include flex(center, center);
+      }
+    }
+    &__shipping--charges {
+      @include flex(space-between, space-between);
+      padding: 10px 0;
+    }
+    &__method__item {
+      border: dashed 1px;
+      width: 100%;
+      padding: 20px 10px;
+      @include flex(center, space-between);
+      opacity: 0.5;
+      i {
+        font-size: 25px;
+      }
+      &.active {
+        opacity: 1;
+        border: solid 1px;
+      }
+    }
+    &__method__item ~ &__method__item {
+      margin-top: 20px;
+    }
+  }
+  &__addres {
+    @include flex(center, space-between);
+    &__selection ~ &__selection {
+      margin-left: 10px;
+    }
+    &__btn {
+      position: absolute;
+      top: -20px;
+    }
+  }
+  &__infor {
+    background-color: whitesmoke;
+    width: 55%;
+    padding: 50px;
+    height: 100%;
+    &__table {
+      margin-top: 50px;
+    }
+    &__total {
+      width: 40%;
+      float: right;
+      &_1 {
+        padding: 20px 0;
+        @include flex(flex-start, space-between);
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+.w-25 {
+  width: 25%;
+}
+.order-btn {
+  background-color: crimson;
+  margin-top: 20px;
+}
+.picklocation_form__item {
+  position: relative;
+  margin-bottom: 30px;
+  width: 32%;
+  label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    user-select: none;
+    pointer-events: none;
+    transition: 0.25s ease-in;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  select {
+    background: whitesmoke;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 100%;
+    margin-bottom: -10px;
+  }
+  &.active {
+    label {
+      top: 30%;
+      font-size: 11px;
+    }
+  }
+}

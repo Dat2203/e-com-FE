@@ -1,0 +1,103 @@
+.login-view__modal {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.login__container {
+  margin: auto;
+  position: relative;
+  width: 450px;
+  background-color: #fff;
+  margin-top: 180px;
+}
+.login__form {
+  @include flex(flex-start, center);
+  flex-direction: column;
+  padding: 20px 20px;
+  &.disabled {
+    display: none;
+  }
+  h4 {
+    margin-bottom: 40px;
+  }
+  span {
+    margin-top: 20px;
+    font-weight: 500;
+  }
+  input {
+    width: 100%;
+    border: none;
+    font-size: 15px;
+  }
+  input:focus {
+    outline: none;
+  }
+  .input-line {
+    background-color: #000;
+    width: 90%;
+    height: 1px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+  }
+}
+.form__switch {
+  @include flex(flex-start, space-between);
+}
+.switch__btn {
+  height: 80px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 50%;
+  @include flex(center, center);
+  padding: 20px;
+  background-color: whitesmoke;
+  color: lightgray;
+  cursor: pointer;
+  &.active {
+    background-color: #fff;
+    color: #000;
+    border-bottom: 2px red solid;
+  }
+}
+
+.submit_btn {
+  width: 100%;
+  background-color: #333f48;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-weight: 700;
+}
+.close-modal__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(15px, -15px);
+  @include circle(40px);
+  background-color: #fff;
+  @include flex(center, center);
+}
+.error-message {
+  color: $main-color;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 0;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+}
+br {
+  width: 20px;
+  height: 1px;
+  background-color: #000;
+}

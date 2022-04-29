@@ -1,0 +1,73 @@
+.sidebar {
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  width: 20%;
+
+  &__name {
+    font-size: 16px;
+    font-weight: 600;
+
+    padding: 20px;
+  }
+  &__point {
+    @include flex(flex-start, flex-start);
+    font-size: 12px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    span {
+      width: 0.5px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.3);
+      margin: 0 5px 0 20px;
+    }
+  }
+  &__main__item {
+    @include flex(center, flex-start);
+    padding: 10px 20px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+    &.active {
+      font-weight: 700;
+      .sidebar__active {
+        position: absolute;
+        width: 4px;
+        height: 100%;
+        background-color: crimson;
+        left: 0;
+      }
+
+      i {
+        color: #000;
+      }
+    }
+    i {
+      margin-right: 20px;
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.2);
+    }
+  }
+  &__main__item:first-child {
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+  &__main__item:hover {
+    i {
+      color: #000;
+    }
+  }
+  &__support {
+    text-align: center;
+
+    padding: 20px;
+    span {
+      font-size: 11px;
+    }
+  }
+}
+.point {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 10px;
+}

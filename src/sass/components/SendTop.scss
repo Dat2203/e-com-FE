@@ -1,0 +1,41 @@
+.send-to-top {
+  position: fixed;
+  padding: 2px;
+  bottom: 10px;
+  right: 0;
+  i {
+    font-size: 20px;
+  }
+}
+.notification {
+  animation: toast-in-right 0.7s;
+  position: fixed;
+  padding: 10px 20px;
+  top: 150px;
+  right: 10px;
+  height: 70px;
+  width: 300px;
+  z-index: 1001;
+  @include flex(center, flex-start);
+  background-color: #fff;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+  }
+  span {
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: normal;
+  }
+  //   &__close-btn {
+  //   }
+}
+@keyframes toast-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    translate: translateX(0);
+  }
+}

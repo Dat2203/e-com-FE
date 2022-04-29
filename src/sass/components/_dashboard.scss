@@ -1,0 +1,80 @@
+.col-6 {
+  width: 45%;
+}
+.dashboard__main {
+  margin-left: 80px;
+  width: 70%;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+.w-4 {
+  width: 40%;
+}
+.w-6 {
+  width: 60%;
+}
+.status-card {
+  padding: 20px 10px;
+  @include flex(center, space-around);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.5s ease 0s;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  &__icon {
+    width: 30%;
+    height: 100%;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  &__infor {
+    flex-grow: 1;
+    text-align: center;
+    z-index: 1;
+    text-transform: capitalize;
+  }
+}
+.status-card__info > h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.status-card::before {
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-image: linear-gradient(to top right, mediumaquamarine, skyblue);
+  position: absolute;
+  left: -50%;
+  top: 0;
+  transform: scale(0);
+  transition: transform 0.8s ease 0s;
+}
+
+.status-card:hover::before {
+  transform: scale(3);
+}
+
+.status-card:hover {
+  color: white;
+}
+.status-card:hover + .status-card__info {
+  h3 {
+    color: white;
+  }
+}
+.card__header {
+  text-transform: capitalize;
+  padding: 20px 10px;
+}
+#cus-table {
+  margin-right: 20px;
+}

@@ -1,0 +1,86 @@
+.table-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.w-3 {
+  width: 30%;
+}
+
+table {
+  width: 100%;
+  min-width: 400px;
+  border-spacing: 0;
+}
+
+thead {
+  background-color: whitesmoke;
+}
+
+tr {
+  text-align: left;
+}
+
+th {
+  text-transform: capitalize;
+  padding: 10px;
+  font-weight: 600;
+}
+td {
+  text-transform: capitalize;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.table__pagination {
+  @include flex(flex-start, flex-start);
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table__pagination-item ~ .table__pagination-item {
+  margin-left: 10px;
+}
+
+.table__pagination-item {
+  @include circle(30px);
+  border-radius: 50%;
+  @include flex(center, center);
+  cursor: pointer;
+}
+
+.table__pagination-item.active,
+.table__pagination-item.active:hover {
+  background-color: mediumaquamarine;
+  color: white;
+  font-weight: 600;
+}
+
+.table__pagination-item:hover {
+  color: white;
+  background-color: mediumaquamarine;
+}
+.card__footer {
+  text-align: center;
+  padding: 20px;
+  text-transform: capitalize;
+}
+
+.table__id {
+  color: #63b1bc;
+}
+.card__body__table {
+  border: solid 0.5px grey;
+  width: 90%;
+}
+.table__quantity {
+  text-align: center;
+}
+.card__header {
+  &.flex {
+    @include flex(flex-start, space-between);
+  }
+}
+.table__image {
+  width: 40px;
+  height: 40px;
+}
